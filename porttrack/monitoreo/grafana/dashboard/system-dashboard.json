@@ -1,0 +1,25 @@
+{
+    "title": "PortTrack System Dashboard",
+    "panels": [
+        {
+            "type": "graph",
+            "title": "Uso de CPU",
+            "targets": [
+                {
+                    "expr": "rate(node_cpu_seconds_total{mode!='idle'}[1m])",
+                    "legendFormat": "CPU {{cpu}}"
+                }
+            ]
+        },
+        {
+            "type": "graph",
+            "title": "Peticiones HTTP",
+            "targets": [
+                {
+                    "expr": "rate(http_requests_total[1m])",
+                    "legendFormat": "endpoint"
+                }
+            ]
+        }
+    ]
+}
